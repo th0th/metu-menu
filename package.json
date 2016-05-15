@@ -1,6 +1,6 @@
 {
   "name": "metu-menu",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Middle East Technical University cafeteria menu fetcher.",
   "main": "dist/index.js",
   "repository": {
@@ -19,6 +19,7 @@
     "mocha": "^2.4.5"
   },
   "dependencies": {
+    "bluebird": "^3.3.5",
     "cheerio": "^0.20.0",
     "moment": "^2.13.0",
     "request": "^2.72.0",

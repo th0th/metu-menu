@@ -23,32 +23,34 @@ var metuMenu = require('metu-menu');
 
 **Fetching menu**
 
-The function expects two arguments, `date` (which is optional and defaults to today) and `callback` function.
+The function expects one `date` argument, if not provided it falls back to current date.
 
 ```js
-metuMenu('2016-05-24', function(error, menu) {
-    if (!error) {
+metuMenu('2016-05-24')
+    .then((menu) => {
         console.log(menu.lunch);
         console.log(menu.dinner);
         console.log(menu.alacarte);
-        console.log(menu.socialBuilding);
-    }
-    ...
-});
+        console.log(menu.socialBuilding)
+    })
+    .catch((error) => {
+        /* do something */
+    });
 ```
 
 or to get today's menu without passing a date argument
 
 ```js
-metuMenu(function(error, menu) {
-    if (!error) {
+metuMenu()
+    .then((menu) => {
         console.log(menu.lunch);
         console.log(menu.dinner);
         console.log(menu.alacarte);
-        console.log(menu.socialBuilding);
-    }
-    ...
-});
+        console.log(menu.socialBuilding)
+    })
+    .catch((error) => {
+        /* do something */
+    });
 ```
 
 ## License
